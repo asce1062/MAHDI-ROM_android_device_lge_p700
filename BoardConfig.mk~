@@ -68,13 +68,3 @@ TARGET_FORCE_CPU_UPLOAD	:= true
 #Try to force baseband display!
 TARGET_USES_JELLYBEAN_BASEBAND := true
 TARGET_QCOM_DISPLAY_VARIANT := legacy
-
-## Webkit
-PRODUCT_PACKAGES += \
-libwebcore 
-
-# (classic webview provider)
-PRODUCT_PROPERTY_OVERRIDES += \
-persist.webview.provider=classic
-
-PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes

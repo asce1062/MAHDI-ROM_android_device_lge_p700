@@ -1,0 +1,4 @@
+debug.camcorder.disablemeta=1
+ro.sf.hwrotation=180
+ro.sf.lcd_density=200
+ro.config.low_ram=true

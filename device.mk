@@ -9,8 +9,7 @@ $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.u0.rc:root/init.u0.rc \
-    $(LOCAL_PATH)/ueventd.u0.rc:root/ueventd.u0.rc \
-    device/lge/p705/configs/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
+    $(LOCAL_PATH)/ueventd.u0.rc:root/ueventd.u0.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/u0_keypad.kl:system/usr/keylayout/u0_keypad.kl \
@@ -26,7 +25,7 @@ PRODUCT_COPY_FILES += \
 # Wifi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/wlan.ko:system/lib/modules/wlan.ko
-    
+	
 # NFC
 # PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/apk/Nfc.apk:system/app/Nfc.apk
@@ -34,12 +33,6 @@ PRODUCT_COPY_FILES += \
 # Misc
 PRODUCT_PACKAGES += \
     libnetcmdiface
-	
-# Packages
-PRODUCT_PACKAGES += \
-    FM2 \
-    libqcomfm_jni \
-    qcom.fmradio
 
 # LibWebCore
 PRODUCT_PACKAGES += \
@@ -54,7 +47,5 @@ PRODUCT_COPY_FILES += \
 # Enable for debugging
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.debuggable=1 \
-    persist.service.adb.enable=1 \
-    ro.fm.analogpath.supported=false \
-    ro.fm.transmitter=false \
-    ro.fm.mulinst.recording.support=false
+    persist.service.adb.enable=1
+

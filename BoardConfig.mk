@@ -8,7 +8,7 @@ LGE_PROJECT := l
 TARGET_BOOTLOADER_BOARD_NAME := p700
 TARGET_ARCH := arm
 
-BOARD_KERNEL_CMDLINE := androidboot.hardware=u0 androidboot.selinux=permissive lge.signed_image=false
+BOARD_KERNEL_CMDLINE := androidboot.hardware=u0 lge.signed_image=false
 
 TARGET_PREBUILT_KERNEL := device/lge/p700/kernel
 
@@ -16,7 +16,7 @@ TARGET_KERNEL_SOURCE := kernel/lge/msm7x27a-common
 
 TARGET_KERNEL_CONFIG := cyanogenmod_u0_defconfig
 
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8-sm
+#TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8-sm
 
 TARGET_RECOVERY_FSTAB := device/lge/p700/recovery.fstab
 
@@ -50,13 +50,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # trebuchet
 PRODUCT_PACKAGES += \
     Trebuchet
-	
-# FM
-BOARD_HAVE_QCOM_FM := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_FM_ENABLED
 
-# We are Using libwebviewchromium for Web Rendering
+## Webkit
+PRODUCT_PACKAGES += \
+    libwebcore	
+
+# (classic webview provider)
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.webview.provider=classic
+
 ENABLE_WEBGL := true
+PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 TARGET_ARCH_LOWMEM := true
 JS_ENGINE	:= v8
 HTTP	:= chrome
@@ -67,14 +71,3 @@ TARGET_FORCE_CPU_UPLOAD	:= true
 
 #Try to force baseband display!
 TARGET_USES_JELLYBEAN_BASEBAND := true
-TARGET_QCOM_DISPLAY_VARIANT := legacy
-
-## Webkit
-PRODUCT_PACKAGES += \
-libwebcore 
-
-# (classic webview provider)
-PRODUCT_PROPERTY_OVERRIDES += \
-persist.webview.provider=classic
-
-PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes

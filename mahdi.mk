@@ -1,5 +1,5 @@
 # Inherit some common mahdi stuff.
-$(call inherit-product, vendor/mahdi/configs/common.mk)
+#$(call inherit-product, vendor/mahdi/configs/common.mk)
 $(call inherit-product, vendor/mahdi/config/common_full_phone.mk)
 
 # Inherit device configuration
@@ -12,7 +12,7 @@ PRODUCT_RELEASE_NAME := OptimusL7
 PRODUCT_DEVICE := p700
 PRODUCT_NAME := mahdi_p700
 PRODUCT_BRAND := lge
-PRODUCT_MODEL := LG-P700
+PRODUCT_MODEL := LG-p700
 PRODUCT_MANUFACTURER := LGE
 
 # override
@@ -30,6 +30,4 @@ PRODUCT_PACKAGES += \
 
 # Copy device specific prebuilt files.
 PRODUCT_COPY_FILES += \
-    vendor/mahdi/prebuilt/bootanimations/BOOTANIMATION-800x480.zip:system/media/bootanimation.zip
-	
-
+    vendor/mahdi/prebuilt/common/bootanimations/BOOTANIMATION-800x480.zip:system/media/bootanimation.zip

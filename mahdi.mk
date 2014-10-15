@@ -1,5 +1,5 @@
 # Inherit some common mahdi stuff.
-#$(call inherit-product, vendor/mahdi/configs/common.mk)
+$(call inherit-product, vendor/mahdi/configs/common.mk)
 $(call inherit-product, vendor/mahdi/config/common_full_phone.mk)
 
 # Inherit device configuration

@@ -21,10 +21,11 @@
      for different hardware and product builds.  Do not translate. -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- LUN file to be used by legacy USB manager.
-         The existence of this file will be used to determine in the
-         legacy USB manager should be started. -->
-    <string name="config_legacyUmsLunFile">/sys/devices/platform/usb_mass_storage/lun0/file</string>
+    <!-- Device supports LED flashlight -->
+    <bool name="config_enableTorch">true</bool>
+
+    <!-- True if the gesture service should be started at system start -->
+    <bool name="config_enableGestureService">true</bool>
 
     <!-- Default value for proximity check on screen wake
          NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)

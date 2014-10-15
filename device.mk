@@ -25,6 +25,10 @@ PRODUCT_COPY_FILES += \
 # Wifi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/wlan.ko:system/lib/modules/wlan.ko
+
+# DalvikVM
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/bin/dalvikvm:system/bin/dalvikvm
 	
 # NFC
 # PRODUCT_COPY_FILES += \
